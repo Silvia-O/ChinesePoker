@@ -152,7 +152,8 @@ namespace MyServer
             // clear data cache
             dataCache.Clear();
             isHandleReceive = false;
-            // TODO send data
+            sendQueue.Clear();
+            isHandleSend = false;
 
             ClientSocket.Shutdown(SocketShutdown.Both);
             ClientSocket.Close();

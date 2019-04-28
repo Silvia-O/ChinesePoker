@@ -17,6 +17,15 @@ namespace MyServer
         private Socket serverSocket;
         private Semaphore acceptSemaphore;
         private ClientPeerPool clientPeerPool;
+        private IApplication app;
+
+        public void SetApplication(IApplication app)
+        {
+            this.app = app;
+        }
+
+
+        #region connect
 
         /// <summary>
         /// Start Server
@@ -33,11 +42,11 @@ namespace MyServer
                 // new all the connecting objects
                 clientPeerPool = new ClientPeerPool(maxCount);
                 ClientPeer tmpClientPeer = null;
-                for (int i=0; i<maxCount; i++)
+                for (int i = 0; i < maxCount; i++)
                 {
                     tmpClientPeer = new ClientPeer();
-                    tmpClientPeer.ReceiveArgs.Completed += ReceiveCompleted;
-                    tmpClientPeer.receiveCompleted = OneReceiveCompleted;
+                    tmpClientPeer.ReceiveArgs.Completed += Receive_Completed;
+                    tmpClientPeer.receiveCompleted = ReceiveCompleted;
                     tmpClientPeer.sendDisconnect = Disconnect;
                     clientPeerPool.Enqueue(tmpClientPeer);
                 }
@@ -54,7 +63,7 @@ namespace MyServer
                 Console.WriteLine(e.Message);
             }
         }
-        #region connect
+
         /// <summary>
         /// accept connection between client
         /// </summary>
@@ -89,6 +98,10 @@ namespace MyServer
             // Socket clientSocket = e.AcceptSocket;
             ClientPeer client = clientPeerPool.Dequeue();
             client.ClientSocket = e.AcceptSocket;
+
+            // tell application
+            // app.OnConnect(client);
+
             // save and process
             StartReceive(client);
 
@@ -160,7 +173,7 @@ namespace MyServer
         /// be triggered once data receiving async evnet finishes
         /// </summary>
         /// <param name="e"></param>
-        private void ReceiveCompleted(object sender, SocketAsyncEventArgs e)
+        private void Receive_Completed(object sender, SocketAsyncEventArgs e)
         {
             HandleReceive(e);
         }
@@ -170,10 +183,10 @@ namespace MyServer
         /// </summary>
         /// <param name="client"></param>
         /// <param name="value">resolved packet</param>
-        private void OneReceiveCompleted(ClientPeer client, SocketMsg msg)
+        private void ReceiveCompleted(ClientPeer client, SocketMsg msg)
         {
             // for application using
-            // TODO
+            app.OnReceive(client, msg);
         }
         #endregion
 
@@ -197,7 +210,7 @@ namespace MyServer
                     throw new Exception("Current client object is null. Disconnecting is failed.");
 
                 // tell application
-                // TODO
+                app.OnDisconnect(client);
 
                 client.Disconnect();
                 // retrieve client object
