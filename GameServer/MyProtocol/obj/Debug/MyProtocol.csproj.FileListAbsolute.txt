@@ -1,0 +1,7 @@
+D:\Github\ChinesePoker\GameServer\MyProtocol\bin\Debug\MyProtocol.dll
+D:\Github\ChinesePoker\GameServer\MyProtocol\bin\Debug\MyProtocol.pdb
+D:\Github\ChinesePoker\GameServer\MyProtocol\obj\Debug\MyProtocol.csproj.CoreCompileInputs.cache
+D:\Github\ChinesePoker\GameServer\MyProtocol\obj\Debug\MyProtocol.dll
+D:\Github\ChinesePoker\GameServer\MyProtocol\obj\Debug\MyProtocol.pdb
+E:\Code\Unity\Card\Assets\Plugins\MyProtocol.dll
+E:\Code\Unity\Card\Assets\Plugins\MyProtocol.pdb

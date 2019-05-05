@@ -13,14 +13,20 @@ namespace MyServer
 
         public ClientPeer()
         {
-            this.ReceiveArgs.UserToken = this;
             this.ReceiveArgs = new SocketAsyncEventArgs();
+            this.ReceiveArgs.UserToken = this;
+            this.ReceiveArgs.SetBuffer(new byte[1024], 0, 1024);
             this.SendArgs = new SocketAsyncEventArgs();
-            this.SendArgs.Completed += SendCompleted;
+            this.SendArgs.Completed += Send_Completed;
         }
 
         #region receive data
 
+        /// <summary>
+        /// call back once message resolved 
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="msg"></param>
         public delegate void ReceiveCompleted(ClientPeer client, SocketMsg msg);
         public ReceiveCompleted receiveCompleted;
 
@@ -32,7 +38,7 @@ namespace MyServer
         /// <summary>
         /// received async socket request
         /// </summary>
-        public SocketAsyncEventArgs ReceiveArgs;
+        public SocketAsyncEventArgs ReceiveArgs { get; set; }
 
 
         /// <summary>
@@ -75,7 +81,12 @@ namespace MyServer
         #endregion
 
         #region send data
-
+        
+        /// <summary>
+        /// call back once disconnecting when sending data 
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="reason"></param>
         public delegate void SendDisconnect(ClientPeer client, string reason);
         public SendDisconnect sendDisconnect;
 
@@ -91,12 +102,17 @@ namespace MyServer
 
         private Queue<byte[]> sendQueue = new Queue<byte[]>();
 
-        public void StartSend(int opCode, int subCode, object value)
+        public void Send(int opCode, int subCode, object value)
         {
             SocketMsg msg = new SocketMsg(opCode, subCode, value);
             byte[] data = EncodeTool.EncodeMsg(msg);
             byte[] packet = EncodeTool.EncodePacket(data);
 
+            Send(packet);
+        }
+
+        public void Send(byte[] packet)
+        {
             sendQueue.Enqueue(packet);
             if (!isHandleSend)
                 Send();
@@ -123,7 +139,7 @@ namespace MyServer
             }
         }
           
-        private void SendCompleted(object sender, SocketAsyncEventArgs e)
+        private void Send_Completed(object sender, SocketAsyncEventArgs e)
         {
             HandleSend();
         }

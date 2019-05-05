@@ -104,7 +104,6 @@ namespace MyServer
             bw.Close();
             ms.Close();
             return data;
-
         }
 
         /// <summary>
@@ -128,7 +127,6 @@ namespace MyServer
             br.Close();
             ms.Close();
             return msg;
-
         }
 
         #endregion

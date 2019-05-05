@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\dell\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\dell\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Card.1530542497.00" t="ExcludeRecursive" />
+    <e p="E:\Code\Unity\Card" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="Character" t="Include">
+            <e p="CardCtrl.cs" t="Include" />
+            <e p="CharacterBase.cs" t="Include" />
+            <e p="CharacterEvent.cs" t="Include" />
+            <e p="CharacterMgr.cs" t="Include" />
+            <e p="DeskCtrl.cs" t="Include" />
+            <e p="LeftPlayerCtrl.cs" t="Include" />
+            <e p="MyPlayerCtrl.cs" t="Include" />
+            <e p="RightPlayerCtrl.cs" t="Include" />
+          </e>
+          <e p="Framework" t="Include">
+            <e p="AreaCode.cs" t="Include" />
+            <e p="ManagerBase.cs" t="Include" />
+            <e p="MonoBase.cs" t="Include" />
+            <e p="MsgCenter.cs" t="Include" />
+          </e>
+          <e p="Model" t="Include">
+            <e p="GameModel.cs" t="Include" />
+            <e p="Models.cs" t="Include" />
+          </e>
+          <e p="Net" t="Include">
+            <e p="ClientPeer.cs" t="Include" />
+            <e p="EncodeTool.cs" t="Include" />
+            <e p="HandlerBase.cs" t="Include" />
+            <e p="Impl" t="Include">
+              <e p="AccountHandler.cs" t="Include" />
+              <e p="FightHandler.cs" t="Include" />
+              <e p="MatchHandler.cs" t="Include" />
+              <e p="UserHandler.cs" t="Include" />
+            </e>
+            <e p="NetMgr.cs" t="Include" />
+            <e p="SocketMsg.cs" t="Include" />
+          </e>
+          <e p="Scene" t="Include">
+            <e p="Msg" t="Include">
+              <e p="LoadSceneMsg.cs" t="Include" />
+            </e>
+            <e p="SceneEvent.cs" t="Include" />
+            <e p="SceneMgr.cs" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="ButtomPanel.cs" t="Include" />
+            <e p="CreatePanel.cs" t="Include" />
+            <e p="InfoPanel.cs" t="Include" />
+            <e p="LeftStatePanel.cs" t="Include" />
+            <e p="MatchPanel.cs" t="Include" />
+            <e p="Msg" t="Include">
+              <e p="PromptMsg.cs" t="Include" />
+            </e>
+            <e p="MyStatePanel.cs" t="Include" />
+            <e p="OverPanel.cs" t="Include" />
+            <e p="PromptPanel.cs" t="Include" />
+            <e p="ReadyPanel.cs" t="Include" />
+            <e p="RightStatePanel.cs" t="Include" />
+            <e p="StartPanel.cs" t="Include" />
+            <e p="StatePanel.cs" t="Include" />
+            <e p="UIBase.cs" t="Include" />
+            <e p="UIEvent.cs" t="Include" />
+            <e p="UIMgr.cs" t="Include" />
+            <e p="UpPanel.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Card.sln" t="IncludeFlat" />
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>

@@ -1,0 +1,12 @@
+D:\Github\ChinesePoker\GameServer\GameServer\bin\Release\GameServer.exe.config
+D:\Github\ChinesePoker\GameServer\GameServer\bin\Release\GameServer.exe
+D:\Github\ChinesePoker\GameServer\GameServer\bin\Release\GameServer.pdb
+D:\Github\ChinesePoker\GameServer\GameServer\bin\Release\MyProtocol.dll
+D:\Github\ChinesePoker\GameServer\GameServer\bin\Release\MyServer.dll
+D:\Github\ChinesePoker\GameServer\GameServer\bin\Release\MyProtocol.pdb
+D:\Github\ChinesePoker\GameServer\GameServer\bin\Release\MyServer.pdb
+D:\Github\ChinesePoker\GameServer\GameServer\obj\Release\GameServer.csprojAssemblyReference.cache
+D:\Github\ChinesePoker\GameServer\GameServer\obj\Release\GameServer.csproj.CoreCompileInputs.cache
+D:\Github\ChinesePoker\GameServer\GameServer\obj\Release\GameServer.csproj.CopyComplete
+D:\Github\ChinesePoker\GameServer\GameServer\obj\Release\GameServer.exe
+D:\Github\ChinesePoker\GameServer\GameServer\obj\Release\GameServer.pdb

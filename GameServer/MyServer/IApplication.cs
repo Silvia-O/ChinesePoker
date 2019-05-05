@@ -8,8 +8,6 @@ namespace MyServer
 {
     public interface IApplication
     {
-        // void OnConnect(ClientPeer client);
-
         void OnDisconnect(ClientPeer client);
 
         void OnReceive(ClientPeer client, SocketMsg msg);

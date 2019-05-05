@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: b4095fb251cfe7e448786ebb5363edd1
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: FZXS15
+  fontNames:
+  - FZXS15
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7765e3a292858c446a24804f450e0ae1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

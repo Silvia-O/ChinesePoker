@@ -17,15 +17,12 @@ namespace MyServer
         private Socket serverSocket;
         private Semaphore acceptSemaphore;
         private ClientPeerPool clientPeerPool;
-        private IApplication app;
+        private IApplication application;
 
         public void SetApplication(IApplication app)
         {
-            this.app = app;
+            this.application = app;
         }
-
-
-        #region connect
 
         /// <summary>
         /// Start Server
@@ -61,8 +58,11 @@ namespace MyServer
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                throw;
             }
         }
+
+        #region connect 
 
         /// <summary>
         /// accept connection between client
@@ -73,7 +73,7 @@ namespace MyServer
             if (e == null)
             {
                 e = new SocketAsyncEventArgs();
-                e.Completed += AcceptCompleted;
+                e.Completed += Accept_Completed;
             }
 
             bool isExecuting = serverSocket.AcceptAsync(e);
@@ -95,12 +95,10 @@ namespace MyServer
             acceptSemaphore.WaitOne();
 
             // get client object
-            // Socket clientSocket = e.AcceptSocket;
             ClientPeer client = clientPeerPool.Dequeue();
             client.ClientSocket = e.AcceptSocket;
 
-            // tell application
-            // app.OnConnect(client);
+            Console.WriteLine("Success to connect with client: " + client.ClientSocket.RemoteEndPoint.ToString());
 
             // save and process
             StartReceive(client);
@@ -116,24 +114,25 @@ namespace MyServer
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AcceptCompleted(object sender, SocketAsyncEventArgs e)
+        private void Accept_Completed(object sender, SocketAsyncEventArgs e)
         {
             HandleAccept(e);
         }
         #endregion
 
-        #region send data
+        #region receive data
+
         private void StartReceive(ClientPeer client)
         {
             try
             {
                 bool isExecuting = client.ClientSocket.ReceiveAsync(client.ReceiveArgs);
-                if(isExecuting == false)
+                if (isExecuting == false)
                 {
                     HandleReceive(client.ReceiveArgs);
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -143,7 +142,7 @@ namespace MyServer
         {
             ClientPeer client = e.UserToken as ClientPeer;
             // decide whether packet is received sucessfully 
-            if(client.ReceiveArgs.SocketError == SocketError.Success && client.ReceiveArgs.BytesTransferred > 0)
+            if (client.ReceiveArgs.SocketError == SocketError.Success && client.ReceiveArgs.BytesTransferred > 0)
             {
                 // clone into array
                 byte[] byteArray = new byte[client.ReceiveArgs.BytesTransferred];
@@ -152,13 +151,13 @@ namespace MyServer
                 StartReceive(client);
             }
             // disconnected 
-            else if(client.ReceiveArgs.BytesTransferred == 0)
+            else if (client.ReceiveArgs.BytesTransferred == 0)
             {
-                
-                if(client.ReceiveArgs.SocketError == SocketError.Success)
+
+                if (client.ReceiveArgs.SocketError == SocketError.Success)
                 {
                     // client initiative to disconnect
-                    Disconnect(client, "client initiative to disconnect");
+                    Disconnect(client, "Client initiative to disconnect!");
                 }
                 else
                 {
@@ -166,8 +165,6 @@ namespace MyServer
                     Disconnect(client, client.ReceiveArgs.SocketError.ToString());
                 }
             }
-            
-
         }
         /// <summary>
         /// be triggered once data receiving async evnet finishes
@@ -186,12 +183,8 @@ namespace MyServer
         private void ReceiveCompleted(ClientPeer client, SocketMsg msg)
         {
             // for application using
-            app.OnReceive(client, msg);
+            application.OnReceive(client, msg);
         }
-        #endregion
-
-        #region receive data
-
         #endregion
 
         #region disconnect
@@ -209,8 +202,10 @@ namespace MyServer
                 if (client == null)
                     throw new Exception("Current client object is null. Disconnecting is failed.");
 
+                Console.WriteLine(client.ClientSocket.RemoteEndPoint.ToString() + "client is disconnected for the reason that " + reason);
+                
                 // tell application
-                app.OnDisconnect(client);
+                application.OnDisconnect(client);
 
                 client.Disconnect();
                 // retrieve client object
@@ -224,7 +219,6 @@ namespace MyServer
             }
         }
         #endregion
-
 
     }
 }

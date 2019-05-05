@@ -11,12 +11,28 @@ namespace MyServer
 
     public class SingleThread
     {
+        private static SingleThread instance = null;
+        public static SingleThread Instance
+        {
+            get
+            {
+                lock (o)
+                {
+                    if (instance == null)
+                        instance = new SingleThread();
+                    return instance;
+                }
+            }
+        }
+
+        private static object o = 1;
+
         /// <summary>
         /// mutex lock
         /// </summary>
         public Mutex mutex;
 
-        public SingleThread()
+        private SingleThread()
         {
             mutex = new Mutex();
         }

@@ -43,6 +43,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cache\AccountCache.cs" />
+    <Compile Include="Cache\Caches.cs" />
+    <Compile Include="Cache\Fight\FightCache.cs" />
+    <Compile Include="Cache\Fight\FightRoom.cs" />
+    <Compile Include="Cache\Fight\LibraryModel.cs" />
+    <Compile Include="Cache\Fight\RoundModel.cs" />
+    <Compile Include="Cache\Match\MatchCache.cs" />
+    <Compile Include="Cache\Match\MatchRoom.cs" />
+    <Compile Include="Cache\UserCache.cs" />
+    <Compile Include="Logic\AccountHandler.cs" />
+    <Compile Include="Logic\FightHandler.cs" />
+    <Compile Include="Logic\IHandler.cs" />
+    <Compile Include="Logic\MatchHandler.cs" />
+    <Compile Include="Logic\UserHandler.cs" />
+    <Compile Include="Model\AccountModel.cs" />
+    <Compile Include="Model\UserModel.cs" />
+    <Compile Include="NetMsgCenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -50,10 +67,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MyProtocol\MyProtocol.csproj">
+      <Project>{74b4c54b-9ab9-46c3-8a30-cc4d4d4eda25}</Project>
+      <Name>MyProtocol</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyServer\MyServer.csproj">
       <Project>{4bf904d7-1d94-4a1c-89a4-e11d05e8320b}</Project>
       <Name>MyServer</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

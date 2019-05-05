@@ -1,0 +1,6 @@
+D:\Github\ChinesePoker\GameServer\MyServer\bin\Release\MyServer.dll
+D:\Github\ChinesePoker\GameServer\MyServer\bin\Release\MyServer.pdb
+D:\Github\ChinesePoker\GameServer\MyServer\obj\Release\MyServer.csproj.CoreCompileInputs.cache
+D:\Github\ChinesePoker\GameServer\MyServer\obj\Release\MyServer.dll
+D:\Github\ChinesePoker\GameServer\MyServer\obj\Release\MyServer.pdb
+D:\Github\ChinesePoker\GameServer\MyServer\obj\Release\MyServer.csprojAssemblyReference.cache
