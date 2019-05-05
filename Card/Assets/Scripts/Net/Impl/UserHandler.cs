@@ -41,11 +41,6 @@ public class UserHandler : HandlerBase
         {
             // deactivate create panel
             Dispatch(AreaCode.UI, UIEvent.CREATE_PANEL_ACTIVE, false);
-
-            // online character
-            //socketMsg.Change(OpCode.USER, UserCode.ONLINE_CREQ, null);
-            //Dispatch(AreaCode.NET, 0, socketMsg);
-
             
             //GameModel model = new GameModel();
             Models.GameModel.UserDto = user;

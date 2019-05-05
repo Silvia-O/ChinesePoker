@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\dell\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\dell\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Card.1530542497.00" t="ExcludeRecursive" />
-    <e p="E:\Code\Unity\Card" t="IncludeRecursive">
+    <e p="C:\Users\dell\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Card.365720601.00" t="ExcludeRecursive" />
+    <e p="D:\Github\ChinesePoker\Card" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">

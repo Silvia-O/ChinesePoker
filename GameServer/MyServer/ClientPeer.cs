@@ -122,7 +122,7 @@ namespace MyServer
         {
             isHandleSend = true;
             
-            // stop sending when no data to  be sent
+            // stop sending when no data to be sent
             if(sendQueue.Count == 0)
             {
                 isHandleSend = false;
