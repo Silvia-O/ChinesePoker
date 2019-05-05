@@ -19,14 +19,12 @@ namespace GameServer.Logic
             switch (subCode)
             {
                 case AccountCode.REGISTER_CREQ:
-                    AccountDto dto = value as AccountDto;
-                    Register(client, dto.Acc, dto.Pwd);
+                    AccountDto rdto = value as AccountDto;
+                    Register(client, rdto.Acc, rdto.Pwd);
                     break;
                 case AccountCode.LOGIN_CREQ:
                     AccountDto ldto = value as AccountDto;
-                    // Login(client, dto.acc, dto.pwd);
-                    Console.WriteLine(ldto.Acc);
-                    Console.WriteLine(ldto.Pwd);
+                    Login(client, ldto.Acc, ldto.Pwd);
                     break;
                 default:
                     break;

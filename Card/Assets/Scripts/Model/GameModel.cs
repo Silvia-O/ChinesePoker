@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// 游戏数据的存储类
-/// </summary>
+
 public class GameModel
 {
     public UserDto UserDto { get; set; }

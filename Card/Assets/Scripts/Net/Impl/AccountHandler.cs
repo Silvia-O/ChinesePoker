@@ -31,9 +31,9 @@ public class AccountHandler: HandlerBase
                     delegate ()
                     {
                         // get msg from server
-                        //SocketMsg socketMsg = new SocketMsg(OpCode.USER, UserCode.GET_INFO_CREQ, null);
-                        //Dispatch(AreaCode.NET, 0, socketMsg);
-                        Debug.Log("成功登陆!");
+                        SocketMsg socketMsg = new SocketMsg(OpCode.USER, UserCode.GET_INFO_CREQ, null);
+                        Dispatch(AreaCode.NET, 0, socketMsg);
+                        Debug.Log("成功登录!");
                     });
                 Dispatch(AreaCode.SCENE, SceneEvent.LOAD_SCENE, msg);
                 break;
