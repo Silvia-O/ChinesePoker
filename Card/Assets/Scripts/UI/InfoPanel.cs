@@ -28,7 +28,7 @@ public class InfoPanel : UIBase
     private Text txtName;
     private Text txtLv;
     private Slider sldExp;
-    private Text txtExp;
+    private Text txtExpValue;
     private Text txtBean;
 
     // Use this for initialization
@@ -37,7 +37,7 @@ public class InfoPanel : UIBase
         txtName = transform.Find("txtName").GetComponent<Text>();
         txtLv = transform.Find("txtLv").GetComponent<Text>();
         sldExp = transform.Find("sldExp").GetComponent<Slider>();
-        txtExp = transform.Find("txtExp").GetComponent<Text>();
+        txtExpValue = transform.Find("txtExpValue").GetComponent<Text>();
         txtBean = transform.Find("txtBean").GetComponent<Text>();
     }
 
@@ -46,7 +46,7 @@ public class InfoPanel : UIBase
     {
         txtName.text = name;
         txtLv.text = "Lv." + lv;
-        txtExp.text = exp + " / " + lv * 100; 
+        txtExpValue.text = exp + " / " + lv * 100; 
         sldExp.value = (float)exp / (lv * 100);
         txtBean.text = "× " + bean.ToString();
     }

@@ -24,8 +24,7 @@ public class ButtomPanel : UIBase
     }
 
     private Text txtBean;
-    private Text txtMutiple;
-    private Button btnChat;
+    private Text txtMultiple;
     private Image imgChoose;
     private Button[] btns;
 
@@ -33,7 +32,7 @@ public class ButtomPanel : UIBase
 
     private void Start()
     {
-        initPanel();
+        InitPanel();
         socketMsg = new SocketMsg();
 
         // default
@@ -42,10 +41,10 @@ public class ButtomPanel : UIBase
         RefreshBean(Models.GameModel.UserDto.Bean);
     }
 
-    private void initPanel()
+    private void InitPanel()
     {
         txtBean = transform.Find("txtBean").GetComponent<Text>();
-        txtMutiple = transform.Find("txtMutiple").GetComponent<Text>();
+        txtMultiple = transform.Find("txtMultiple").GetComponent<Text>();
     }
 
     /// <summary>
@@ -62,6 +61,6 @@ public class ButtomPanel : UIBase
     /// <param name="mutiple"></param>
     private void ChangeMutiple(int mutiple)
     {
-        txtMutiple.text = "倍数 × " + mutiple;
+        txtMultiple.text = "倍数 × " + mutiple;
     }
 }

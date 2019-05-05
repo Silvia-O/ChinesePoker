@@ -53,7 +53,7 @@ public class FightHandler : HandlerBase
     {
         if (result == -1)
         {
-            PromptMsg promptMsg = new PromptMsg("管不了上一个玩家出的牌", Color.red);
+            PromptMsg promptMsg = new PromptMsg("压不住上一个玩家出的牌", Color.red);
             Dispatch(AreaCode.UI, UIEvent.PROMPT_MSG, promptMsg);
  
             Dispatch(AreaCode.UI, UIEvent.SHOW_DEAL_BUTTON, true);

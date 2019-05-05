@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net.Sockets;
 using MyProtocol.Code;
-using UnityEditor.U2D;
 using UnityEngine;
 
 public class NetMgr : ManagerBase

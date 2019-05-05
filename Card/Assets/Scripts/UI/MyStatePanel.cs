@@ -51,6 +51,7 @@ public class MyStatePanel : StatePanel
     private Button btnGrab;
     private Button btnNGrab;
     private Button btnReady;
+    private Button btnLeave;
 
     private SocketMsg socketMsg;
 
@@ -63,9 +64,11 @@ public class MyStatePanel : StatePanel
         btnGrab = transform.Find("btnGrab").GetComponent<Button>();
         btnNGrab = transform.Find("btnNGrab").GetComponent<Button>();
         btnReady = transform.Find("btnReady").GetComponent<Button>();
+        btnLeave = transform.Find("btnLeave").GetComponent<Button>();
 
         btnDeal.onClick.AddListener(DealClick);
         btnNDeal.onClick.AddListener(NDealClick);
+        btnLeave.onClick.AddListener(LeaveClick);
 
         btnGrab.onClick.AddListener(
             delegate ()
@@ -149,8 +152,17 @@ public class MyStatePanel : StatePanel
     {
         socketMsg.Change(OpCode.MATCH, MatchCode.READY_CREQ, null);
         Dispatch(AreaCode.NET, 0, socketMsg);
+    }
 
+    private void LeaveClick()
+    {
+        socketMsg.Change(OpCode.MATCH, MatchCode.LEAVE_CREQ, null);
+        Dispatch(AreaCode.NET, 0, socketMsg);
 
+        socketMsg.Change(OpCode.USER, UserCode.GET_INFO_CREQ, null);
+        Dispatch(AreaCode.NET, 0, socketMsg);
+        
+        Dispatch(AreaCode.SCENE, SceneEvent.LOAD_SCENE, new LoadSceneMsg(1, null));
     }
 
 }

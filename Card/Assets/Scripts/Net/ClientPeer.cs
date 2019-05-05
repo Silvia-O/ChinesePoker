@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Sockets;
-using UnityEditor.U2D;
 using UnityEngine;
 
 public class ClientPeer
@@ -108,7 +107,6 @@ public class ClientPeer
 
         SocketMsg msg = EncodeTool.DecodeMsg(data);
         SocketMsgQueue.Enqueue(msg);
-        Debug.Log(msg.Value);
 
         HandleReceive();
     }

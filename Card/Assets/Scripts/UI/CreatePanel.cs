@@ -56,8 +56,6 @@ public class CreatePanel : UIBase
             Dispatch(AreaCode.UI, UIEvent.PROMPT_MSG, promptMsg);
             return;
         }
-
-        
         socketMsg.Change(OpCode.USER, UserCode.CREATE_CREQ, inpName.text);
         Dispatch(AreaCode.NET, 0, socketMsg);
     }

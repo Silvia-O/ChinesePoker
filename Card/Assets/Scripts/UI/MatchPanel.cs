@@ -25,7 +25,6 @@ public class MatchPanel : UIBase
     }
 
     private Button btnMatch;
-    private Image imgBg;
     private Text txtDes;
     private Button btnCancel;
     private Button btnEnter;
@@ -36,7 +35,6 @@ public class MatchPanel : UIBase
     void Start()
     {
         btnMatch = transform.Find("btnMatch").GetComponent<Button>();
-        imgBg = transform.Find("imgBg").GetComponent<Image>();
         txtDes = transform.Find("txtDes").GetComponent<Text>();
         btnCancel = transform.Find("btnCancel").GetComponent<Button>();
         btnEnter = transform.Find("btnEnter").GetComponent<Button>();
@@ -108,7 +106,6 @@ public class MatchPanel : UIBase
     /// </summary>
     private void SetObjectsActive(bool active)
     {
-        imgBg.gameObject.SetActive(active);
         txtDes.gameObject.SetActive(active);
         btnCancel.gameObject.SetActive(active);
     }

@@ -84,7 +84,6 @@ namespace GameServer.Logic
                       // not online
                       if (!accountCache.IsOnline(client))
                       {
-                          //client.Send(OpCode.USER, UserCode.GET_INFO_SRES, null);
                           return;
                       }
 

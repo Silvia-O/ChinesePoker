@@ -19,7 +19,7 @@ public class MyPlayerCtrl : CharacterBase
         switch (eventCode)
         {
             case CharacterEvent.INIT_MY_CARD:
-                StartCoroutine(initCardList(message as List<CardDto>));
+                StartCoroutine(InitCardList(message as List<CardDto>));
                 break;
             case CharacterEvent.ADD_MY_CARD:
                 AddTableCard(message as GrabDto);
@@ -150,7 +150,7 @@ public class MyPlayerCtrl : CharacterBase
     /// </summary>
     /// <param name="cardList"></param>
     /// <returns></returns>
-    private IEnumerator initCardList(List<CardDto> cardList)
+    private IEnumerator InitCardList(List<CardDto> cardList)
     {
         GameObject cardPrefab = Resources.Load<GameObject>("Card/MyCard");
 

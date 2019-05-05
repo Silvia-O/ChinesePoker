@@ -8,7 +8,6 @@ using MyProtocol.Code;
 using GameServer.Cache;
 using MyProtocol.Dto;
 using GameServer.Model;
-using MyProtocol.Dto;
 using GameServer.Cache.Match;
 
 namespace GameServer.Logic
@@ -40,7 +39,6 @@ namespace GameServer.Logic
             switch (subCode)
             {
                 case MatchCode.ENTER_CREQ:
-                    //enter(client, (int)value);
                     Enter(client);
                     break;
                 case MatchCode.LEAVE_CREQ:
@@ -110,7 +108,7 @@ namespace GameServer.Logic
                     }
 
                     MatchRoom room = matchCache.Leave(userId);
-                    // broadcast left player info to other players
+                    // broadcast leaving player info to other players
                     room.Broadcast(OpCode.MATCH, MatchCode.LEAVE_BRO, userId);
 
                     Console.WriteLine("有玩家离开匹配房间.");

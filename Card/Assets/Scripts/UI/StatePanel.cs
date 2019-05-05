@@ -71,11 +71,11 @@ public class StatePanel : UIBase
 
     protected UserDto userDto;
 
-    protected Image imgIdentity;
+    protected Image imgPlayer;
     protected Text txtReady;
     protected virtual void Start()
     {
-        imgIdentity = transform.Find("imgIdentity").GetComponent<Image>();
+        imgPlayer = transform.Find("imgPlayer").GetComponent<Image>();
         txtReady = transform.Find("txtReady").GetComponent<Text>();
 
         // defualt
@@ -96,11 +96,11 @@ public class StatePanel : UIBase
     {
         if (identity == 0)
         {
-            imgIdentity.sprite = Resources.Load<Sprite>("Identity/Farmer");
+            imgPlayer.sprite = Resources.Load<Sprite>("Identity/Farmer");
         }
         else if (identity == 1)
         {
-            imgIdentity.sprite = Resources.Load<Sprite>("Identity/Landlord");
+            imgPlayer.sprite = Resources.Load<Sprite>("Identity/Landlord");
         }
     }
 
