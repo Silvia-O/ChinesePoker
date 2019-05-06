@@ -33,7 +33,7 @@ public class MatchHandler : HandlerBase
 
     private void StartBroadcast()
     {
-        promptMsg.Change("所有玩家准备开始游戏", UnityEngine.Color.blue);
+        promptMsg.Change("所有玩家准备开始游戏", UnityEngine.Color.yellow);
         Dispatch(AreaCode.UI, UIEvent.PROMPT_MSG, promptMsg);
         Dispatch(AreaCode.UI, UIEvent.PLAYER_HIDE_STATE, null);
     }

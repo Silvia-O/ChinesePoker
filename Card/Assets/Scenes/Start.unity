@@ -1002,8 +1002,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 911971676}
-  - component: {fileID: 911971677}
   - component: {fileID: 911971678}
+  - component: {fileID: 911971677}
   m_Layer: 5
   m_Name: PromptPanel
   m_TagString: Untagged

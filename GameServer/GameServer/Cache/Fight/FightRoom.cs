@@ -195,6 +195,7 @@ namespace GameServer.Cache.Fight
                 CardDto card = libraryModel.Deal();
                 PlayerList[0].Add(card);
             }
+            /*
             for (int i = 0; i < 17; i++)
             {
                 CardDto card = libraryModel.Deal();
@@ -205,6 +206,7 @@ namespace GameServer.Cache.Fight
                 CardDto card = libraryModel.Deal();
                 PlayerList[2].Add(card);
             }
+            */
             for (int i = 0; i < 3; i++)
             {
                 CardDto card = libraryModel.Deal();
@@ -333,8 +335,8 @@ namespace GameServer.Cache.Fight
         public void Sort(bool asc = true)
         {
             SortCard(PlayerList[0].CardList, asc);
-            SortCard(PlayerList[1].CardList, asc);
-            SortCard(PlayerList[2].CardList, asc);
+            //SortCard(PlayerList[1].CardList, asc);
+            //SortCard(PlayerList[2].CardList, asc);
             SortCard(TableCardList, asc);
         }
 
