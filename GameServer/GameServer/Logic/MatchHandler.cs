@@ -139,15 +139,15 @@ namespace GameServer.Logic
                     room.Broadcast(OpCode.MATCH, MatchCode.READY_BRO, userId);
 
                     
-                    //if (room.IsAllReady())
-                    //{
+                    if (room.IsAllReady())
+                    {
                         // start fighting 
                         startFight(room.GetUIdList());
                         // broadcast start fighting info to all players
                         room.Broadcast(OpCode.MATCH, MatchCode.START_BRO, null);
                         // destroy matching room
                         matchCache.Destroy(room);
-                    //}
+                    }
                 }
                 );
         }
