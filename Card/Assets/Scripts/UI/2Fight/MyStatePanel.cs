@@ -41,6 +41,11 @@ public class MyStatePanel : StatePanel
                     btnReady.gameObject.SetActive(false);
                     break;
                 }
+            case UIEvent.HIDE_DEAL_BUTTON:
+            {
+                HideDealClick();
+                break;
+            }
             default:
                 break;
         }
@@ -118,6 +123,10 @@ public class MyStatePanel : StatePanel
     {
         Dispatch(AreaCode.CHARACTER, CharacterEvent.DEAL_CARD, null);
 
+    }
+
+    private void HideDealClick()
+    {
         btnDeal.gameObject.SetActive(false);
         btnNDeal.gameObject.SetActive(false);
     }

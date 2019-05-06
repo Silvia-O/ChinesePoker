@@ -10,6 +10,7 @@ public class NetMgr : ManagerBase
 {
     public static NetMgr Instance = null;
 
+//   private ClientPeer client = new ClientPeer("39.108.57.185", 6666);
     private ClientPeer client = new ClientPeer("127.0.0.1", 6666);
     
     #region handle events msg from server

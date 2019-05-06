@@ -3,3 +3,4 @@ D:\Github\ChinesePoker\GameServer\MyProtocol\bin\Release\MyProtocol.pdb
 D:\Github\ChinesePoker\GameServer\MyProtocol\obj\Release\MyProtocol.csproj.CoreCompileInputs.cache
 D:\Github\ChinesePoker\GameServer\MyProtocol\obj\Release\MyProtocol.dll
 D:\Github\ChinesePoker\GameServer\MyProtocol\obj\Release\MyProtocol.pdb
+D:\Github\ChinesePoker\GameServer\MyProtocol\obj\Release\MyProtocol.csprojAssemblyReference.cache

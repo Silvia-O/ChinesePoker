@@ -69,6 +69,7 @@ public class MyPlayerCtrl : CharacterBase
         }
         else
         {
+            Dispatch(AreaCode.UI, UIEvent.HIDE_DEAL_BUTTON, true);
             socketMsg.Change(OpCode.FIGHT, FightCode.DEAL_CREQ, dto);
             Dispatch(AreaCode.NET, 0, socketMsg);
         }
@@ -171,7 +172,7 @@ public class MyPlayerCtrl : CharacterBase
     {
         GameObject cardGo = Object.Instantiate(cardPrefab, cardParent) as GameObject;
         cardGo.name = card.Name;
-        cardGo.transform.localPosition = new Vector2((0.25f * index), 0);
+        cardGo.transform.localPosition = new Vector2((0.3f * index), 0);
         CardCtrl cardCtrl = cardGo.GetComponent<CardCtrl>();
         cardCtrl.InitCards(card, index, true);
 

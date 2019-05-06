@@ -26,6 +26,7 @@ public class UIEvent
 
     public const int SET_TABLE_CARDS = 15;
     public const int SHOW_OVER_PANEL = 16;
+    public const int HIDE_DEAL_BUTTON = 18;
     
     public const int PROMPT_MSG = 17;
 }

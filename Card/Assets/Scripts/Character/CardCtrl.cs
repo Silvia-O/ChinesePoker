@@ -28,7 +28,7 @@ public class CardCtrl : MonoBehaviour
         if (Selected == true)
         {
             Selected = false;
-            transform.localPosition -= new Vector3(0, 0.3f, 0);
+            transform.localPosition -= new Vector3(0, 0.2f, 0);
         }
         string resPath = string.Empty;
         if (isMine)
@@ -55,11 +55,11 @@ public class CardCtrl : MonoBehaviour
         this.Selected = !Selected;
         if(Selected == true)
         {
-            transform.localPosition += new Vector3(0, 0.3f, 0);
+            transform.localPosition += new Vector3(0, 0.2f, 0);
         }
         else
         {
-            transform.localPosition -= new Vector3(0, 0.3f, 0);
+            transform.localPosition -= new Vector3(0, 0.2f, 0);
         }
     }
 
@@ -71,7 +71,7 @@ public class CardCtrl : MonoBehaviour
         if(Selected == false)
         {
             this.Selected = true;
-            transform.localPosition += new Vector3(0, 0.3f, 0);
+            transform.localPosition += new Vector3(0, 0.2f, 0);
         }
     }
 }
