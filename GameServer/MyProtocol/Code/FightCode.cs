@@ -20,10 +20,11 @@ namespace MyProtocol.Code
 
         public const int TURN_DEAL_BRO = 8;
 
-        public const int LEAVE_BRO = 9;
+        public const int LEAVE_CREQ = 9;
+        public const int LEAVE_BRO = 10;
 
-        public const int OVER_BRO = 10;
+        public const int OVER_BRO = 11;
 
-        public const int GET_CARD_SRES = 11;
+        public const int GET_CARD_SRES = 12;
     }
 }

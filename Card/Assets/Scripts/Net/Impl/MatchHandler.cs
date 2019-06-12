@@ -74,7 +74,6 @@ public class MatchHandler : HandlerBase
   
     private void EnterBroadcast(UserDto newUser)
     {
-
         // update room info
         MatchRoomDto room = Models.GameModel.MatchRoomDto;
         room.Add(newUser);

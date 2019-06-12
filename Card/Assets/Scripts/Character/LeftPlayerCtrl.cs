@@ -89,7 +89,7 @@ public class LeftPlayerCtrl : CharacterBase
     private void CreateGo(int index, GameObject cardPrefab)
     {
         GameObject cardGo = Object.Instantiate(cardPrefab, cardParent) as GameObject;
-        cardGo.transform.localPosition = new Vector2((0.15f * index), 0);
+        cardGo.transform.localPosition = new Vector2((0.2f * index), 0);
         cardGo.GetComponent<SpriteRenderer>().sortingOrder = index;
 
         this.cardObjectList.Add(cardGo);

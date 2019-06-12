@@ -38,6 +38,9 @@ namespace GameServer.Logic
         {
             switch (subCode)
             {
+                case MatchCode.MATCH_CREQ:
+                    Match(client);
+                    break;
                 case MatchCode.ENTER_CREQ:
                     Enter(client);
                     break;
@@ -51,12 +54,13 @@ namespace GameServer.Logic
                     break;
             }
         }
+        
 
         /// <summary>
         /// enter room
         /// </summary>
         /// <param name="client"></param>
-        private void Enter(ClientPeer client)
+        private void Match(ClientPeer client)
         {
             SingleThread.Instance.SingleExecute(
                 delegate ()
@@ -72,22 +76,26 @@ namespace GameServer.Logic
                     }
                     // able to enter room
                     MatchRoom room = matchCache.Enter(userId, client);
-
-                    // broadcast entering player info to other players
-                    #region construct a UserDto
-                    UserModel model = userCache.GetModelById(userId);
-                    UserDto userDto = new UserDto(model.Id, model.Name, model.Bean, model.WinCount, model.LoseCount, model.RunCount, model.Lv, model.Exp);
-                    #endregion
-                    room.Broadcast(OpCode.MATCH, MatchCode.ENTER_BRO, userDto, client);
-                    
                     MatchRoomDto dto = MakeRoomDto(room);
                     client.Send(OpCode.MATCH, MatchCode.ENTER_SRES, dto);
-
-                    Console.WriteLine("有玩家进入匹配房间.");
                 }
                 );
         }
 
+        private void Enter(ClientPeer client)
+        {
+            if (!userCache.IsOnline(client))
+                return;
+            int userId = userCache.GetId(client);
+            MatchRoom room = matchCache.GetRoom(userId);
+            // broadcast entering player info to other players
+            #region construct a UserDto
+            UserModel model = userCache.GetModelById(userId);
+            UserDto userDto = new UserDto(model.Id, model.Name, model.Bean, model.WinCount, model.LoseCount, model.RunCount, model.Lv, model.Exp);
+            #endregion
+            room.Broadcast(OpCode.MATCH, MatchCode.ENTER_BRO, userDto, client);
+        }
+        
 
         /// <summary>
         /// leave room
@@ -110,8 +118,6 @@ namespace GameServer.Logic
                     MatchRoom room = matchCache.Leave(userId);
                     // broadcast leaving player info to other players
                     room.Broadcast(OpCode.MATCH, MatchCode.LEAVE_BRO, userId);
-
-                    Console.WriteLine("有玩家离开匹配房间.");
                 });
         }
     

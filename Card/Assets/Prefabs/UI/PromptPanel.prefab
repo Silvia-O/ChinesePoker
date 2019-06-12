@@ -117,8 +117,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 451342439532777464}
-  - component: {fileID: 451342439532777470}
   - component: {fileID: 451342439532777471}
+  - component: {fileID: 4944932353593384135}
   m_Layer: 5
   m_Name: PromptPanel
   m_TagString: Untagged
@@ -146,7 +146,15 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &451342439532777470
+--- !u!222 &451342439532777471
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451342439532777465}
+  m_CullTransparentMesh: 0
+--- !u!114 &4944932353593384135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,11 +167,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showTime: 1
---- !u!222 &451342439532777471
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 451342439532777465}
-  m_CullTransparentMesh: 0

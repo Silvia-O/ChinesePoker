@@ -76,12 +76,14 @@ public class MatchPanel : UIBase
 
     private void EnterClick()
     {
+        socketMsg.Change(OpCode.MATCH, MatchCode.ENTER_CREQ, null);
+        Dispatch(AreaCode.NET, 0, socketMsg);
         Dispatch(AreaCode.SCENE, SceneEvent.LOAD_SCENE, new LoadSceneMsg(2, null));
     }
 
     private void MatchClick()
     {
-        socketMsg.Change(OpCode.MATCH, MatchCode.ENTER_CREQ, null);
+        socketMsg.Change(OpCode.MATCH, MatchCode.MATCH_CREQ, null);
         Dispatch(AreaCode.NET, 0, socketMsg);
 
         SetObjectsActive(true);

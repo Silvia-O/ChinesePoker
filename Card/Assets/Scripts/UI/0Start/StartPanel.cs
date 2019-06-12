@@ -34,6 +34,6 @@ public class StartPanel : UIBase
 
     private void QuitClick()
     {
-        
+        Application.Quit();
     }
 }

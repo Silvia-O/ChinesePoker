@@ -13,7 +13,8 @@ public class MyStatePanel : StatePanel
         base.Awake();
         Bind(UIEvent.SHOW_GRAB_BUTTON,
             UIEvent.SHOW_DEAL_BUTTON,
-            UIEvent.PLAYER_HIDE_READY_BUTTON);
+            UIEvent.PLAYER_HIDE_READY_BUTTON,
+            UIEvent.HIDE_DEAL_BUTTON);
     }
 
     public override void Execute(int eventCode, object message)
@@ -73,7 +74,7 @@ public class MyStatePanel : StatePanel
 
         btnDeal.onClick.AddListener(DealClick);
         btnNDeal.onClick.AddListener(NDealClick);
-        btnLeave.onClick.AddListener(LeaveClick);
+        //btnLeave.onClick.AddListener(LeaveClick);
 
         btnGrab.onClick.AddListener(
             delegate ()
@@ -163,15 +164,15 @@ public class MyStatePanel : StatePanel
         Dispatch(AreaCode.NET, 0, socketMsg);
     }
 
-    private void LeaveClick()
+    /*private void LeaveClick()
     {
-        socketMsg.Change(OpCode.MATCH, MatchCode.LEAVE_CREQ, null);
+        socketMsg.Change(OpCode.FIGHT, MatchCode.LEAVE_CREQ, null);
         Dispatch(AreaCode.NET, 0, socketMsg);
 
         socketMsg.Change(OpCode.USER, UserCode.GET_INFO_CREQ, null);
         Dispatch(AreaCode.NET, 0, socketMsg);
         
         Dispatch(AreaCode.SCENE, SceneEvent.LOAD_SCENE, new LoadSceneMsg(1, null));
-    }
+    }*/
 
 }

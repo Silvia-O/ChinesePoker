@@ -36,6 +36,9 @@ namespace GameServer.Logic
                 case FightCode.PASS_CREQ:
                     Pass(client);
                     break;
+                case FightCode.LEAVE_CREQ:
+                    Leave(client);
+                    break;
                 default:
                     break;
             }

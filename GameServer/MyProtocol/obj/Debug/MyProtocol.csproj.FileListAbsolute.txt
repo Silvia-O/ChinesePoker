@@ -5,4 +5,5 @@ D:\Github\ChinesePoker\GameServer\MyProtocol\obj\Debug\MyProtocol.dll
 D:\Github\ChinesePoker\GameServer\MyProtocol\obj\Debug\MyProtocol.pdb
 E:\Code\Unity\Card\Assets\Plugins\MyProtocol.dll
 E:\Code\Unity\Card\Assets\Plugins\MyProtocol.pdb
-D:\Github\ChinesePoker\GameServer\MyProtocol\obj\Debug\MyProtocol.csprojAssemblyReference.cache
+D:\Github\ChinesePoker\Card\Assets\Plugins\MyProtocol.dll
+D:\Github\ChinesePoker\Card\Assets\Plugins\MyProtocol.pdb

@@ -64,7 +64,7 @@ public class DeskCtrl : CharacterBase
         }
         else
         {
-            // original more than now
+            // original less than now
             int index = 0;
             foreach (var cardCtrl in cardCtrlList)
             {

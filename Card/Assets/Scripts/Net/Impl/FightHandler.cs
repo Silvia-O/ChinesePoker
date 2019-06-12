@@ -82,7 +82,6 @@ public class FightHandler : HandlerBase
         Dispatch(AreaCode.CHARACTER, eventCode, dto.RemainCardList);
 
         Dispatch(AreaCode.CHARACTER, CharacterEvent.UPDATE_SHOW_DESK, dto.SelectCardList);
-      
     }
 
 

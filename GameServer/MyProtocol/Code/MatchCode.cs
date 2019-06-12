@@ -8,6 +8,7 @@ namespace MyProtocol.Code
     public class MatchCode
     {
         // enter match 
+        public const int MATCH_CREQ = 8;
         public const int ENTER_CREQ = 0;
         public const int ENTER_SRES = 1;
         public const int ENTER_BRO = 2;

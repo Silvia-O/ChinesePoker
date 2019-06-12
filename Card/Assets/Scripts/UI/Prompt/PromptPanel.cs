@@ -16,7 +16,7 @@ public class PromptPanel : UIBase
         switch (eventCode)
         {
             case UIEvent.PROMPT_MSG:
-                var msg = message as PromptMsg;
+                PromptMsg msg = message as PromptMsg;
                 PromptMessage(msg.Text, msg.Color);
                 break;
             default:
@@ -27,7 +27,8 @@ public class PromptPanel : UIBase
     private Text txtPrompt;
     private CanvasGroup cg;
     
-    [SerializeField] [Range(0, 3)] private float showTime = 1f;
+    [SerializeField] [Range(0, 3)] 
+    private float showTime = 1f;
     private float timer = 0f;
 
     // Start is called before the first frame update

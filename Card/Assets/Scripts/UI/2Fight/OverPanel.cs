@@ -31,6 +31,8 @@ public class OverPanel : UIBase
     private Text txtWinIdentity;
     private Text txtWinBean;
     private Button btnBack;
+    
+    private SocketMsg socketMsg;
 
     // Use this for initialization
     void Start()
@@ -39,7 +41,7 @@ public class OverPanel : UIBase
         txtWinBean = transform.Find("txtWinBean").GetComponent<Text>();
         btnBack = transform.Find("btnBack").GetComponent<Button>();
         btnBack.onClick.AddListener(BackClick);
-
+        transform.SetAsLastSibling();
         setPanelActive(false);
     }
 
@@ -74,10 +76,13 @@ public class OverPanel : UIBase
         LoadSceneMsg msg = new LoadSceneMsg(1,
                  delegate ()
                  {
-                     SocketMsg socketMsg = new SocketMsg(OpCode.USER, UserCode.GET_INFO_CREQ, null);
+                     
+                     socketMsg.Change(OpCode.USER, UserCode.GET_INFO_CREQ, null);
                      Dispatch(AreaCode.NET, 0, socketMsg);
                  });
         Dispatch(AreaCode.SCENE, SceneEvent.LOAD_SCENE, msg);
+        socketMsg.Change(OpCode.MATCH, MatchCode.LEAVE_CREQ, null);
+        Dispatch(AreaCode.NET, 0, socketMsg);
     }
 
 }
